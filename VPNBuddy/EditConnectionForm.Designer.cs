@@ -44,21 +44,21 @@
             this.urlTextBox.Location = new System.Drawing.Point(118, 53);
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.Size = new System.Drawing.Size(338, 31);
-            this.urlTextBox.TabIndex = 0;
+            this.urlTextBox.TabIndex = 1;
             // 
             // userTextBox
             // 
             this.userTextBox.Location = new System.Drawing.Point(118, 90);
             this.userTextBox.Name = "userTextBox";
             this.userTextBox.Size = new System.Drawing.Size(338, 31);
-            this.userTextBox.TabIndex = 1;
+            this.userTextBox.TabIndex = 2;
             // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(118, 16);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(338, 31);
-            this.nameTextBox.TabIndex = 2;
+            this.nameTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -106,7 +106,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(338, 31);
-            this.passwordTextBox.TabIndex = 7;
+            this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // button1
@@ -115,7 +115,7 @@
             this.button1.Location = new System.Drawing.Point(353, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 38);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
