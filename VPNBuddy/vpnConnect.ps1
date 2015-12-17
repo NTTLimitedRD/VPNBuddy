@@ -53,7 +53,7 @@ echo "Trying to terminate remaining vpn connections"
 start-Process -FilePath $vpncliAbsolutePath -ArgumentList 'disconnect' -wait
 #Connect to VPN
 ###Err seeking, display the arguments the script got from RDM
-echo "Connecting to VPN address '$VPNHost' as user '$username' with password '$Password'."
+echo "Connecting to VPN address '$VPNHost' as user '$username' with password '*******'."
 VPNConnect
 #Write login and password, sends first one ENTER to accept protocol answer.
 #[System.Windows.Forms.SendKeys]::SendWait("{Enter}")
@@ -61,8 +61,3 @@ VPNConnect
 [System.Windows.Forms.SendKeys]::SendWait("$Password{Enter}")
 #Start vpnui
 start-Process -FilePath $vpnuiAbsolutePath
-##Err seeking, Wait for keydown
-#echo "Press any key to continue ..."
-#try{
-#    $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-#}catch{}

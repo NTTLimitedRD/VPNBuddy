@@ -129,6 +129,7 @@ namespace VPNBuddy
             }
             catch (Exception ex)
             {
+                Write("Failed to connect, make sure you read the README.md file");
                 Write(ex);
             }
         }
