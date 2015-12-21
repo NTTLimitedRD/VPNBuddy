@@ -43,21 +43,21 @@
             // 
             this.urlTextBox.Location = new System.Drawing.Point(118, 53);
             this.urlTextBox.Name = "urlTextBox";
-            this.urlTextBox.Size = new System.Drawing.Size(338, 31);
+            this.urlTextBox.Size = new System.Drawing.Size(338, 26);
             this.urlTextBox.TabIndex = 1;
             // 
             // userTextBox
             // 
             this.userTextBox.Location = new System.Drawing.Point(118, 90);
             this.userTextBox.Name = "userTextBox";
-            this.userTextBox.Size = new System.Drawing.Size(338, 31);
+            this.userTextBox.Size = new System.Drawing.Size(338, 26);
             this.userTextBox.TabIndex = 2;
             // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(118, 16);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(338, 31);
+            this.nameTextBox.Size = new System.Drawing.Size(338, 26);
             this.nameTextBox.TabIndex = 0;
             // 
             // label1
@@ -66,9 +66,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 20);
+            this.label1.Size = new System.Drawing.Size(62, 29);
             this.label1.TabIndex = 3;
-            this.label1.Text = "URL";
+            this.label1.Text = "Host";
             // 
             // label2
             // 
@@ -76,7 +76,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.Size = new System.Drawing.Size(64, 29);
             this.label2.TabIndex = 4;
             this.label2.Text = "User";
             // 
@@ -86,7 +86,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(78, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "Name";
             // 
@@ -96,7 +96,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(23, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(120, 29);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password";
             // 
@@ -105,7 +105,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(118, 127);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(338, 31);
+            this.passwordTextBox.Size = new System.Drawing.Size(338, 26);
             this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
