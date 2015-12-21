@@ -28,16 +28,24 @@ namespace VPNBuddy
             }
         }
 
-        public string Decrypt(string value)
+        public string Decrypt(byte[] value)
         {
-            byte[] valueBytes = Encoding.Unicode.GetBytes(value);
-            return Encoding.Unicode.GetString(_rsaProvider.Decrypt(valueBytes, true));
+            return Encoding.Unicode.GetString(_rsaProvider.Decrypt(value, true));
         }
 
-        public string Encrypt(string password)
+        public byte[] Encrypt(string password)
         {
-            byte[] valueBytes = Encoding.Unicode.GetBytes(password);
-            return Encoding.Unicode.GetString(_rsaProvider.Encrypt(valueBytes, true));
+            return _rsaProvider.Encrypt(Encoding.Unicode.GetBytes(password), true);
+        }
+
+        public static string Base64Encode(byte[] message)
+        {
+            return Convert.ToBase64String(message);
+        }
+
+        public static byte[] Base64Decode(string base64EncodedData)
+        {
+            return Convert.FromBase64String(base64EncodedData);
         }
     }
 }

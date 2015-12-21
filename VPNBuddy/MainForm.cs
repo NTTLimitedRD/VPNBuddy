@@ -97,7 +97,7 @@ namespace VPNBuddy
                 data.Name = vpn.Attribute("name").Value;
                 data.HostName = vpn.Attribute("vpnhost").Value;
                 data.Username = vpn.Attribute("username").Value;
-                data.Password = _securityManager.Decrypt(vpn.Attribute("password").Value);
+                data.Password = _securityManager.Decrypt(SecurityManager.Base64Decode(vpn.Attribute("password").Value));
 
                 listBox1.Items.Add(data);
             }
@@ -192,19 +192,9 @@ namespace VPNBuddy
                     new XAttribute("name", vpn.Name),
                     new XAttribute("vpnhost", vpn.HostName),
                     new XAttribute("username", vpn.Username),
-                    new XAttribute("password", _securityManager.Encrypt(vpn.Password))));
+                    new XAttribute("password", SecurityManager.Base64Encode(_securityManager.Encrypt(vpn.Password)))));
             }
             configDoc.Save("Config.xml", SaveOptions.None);
-        }
-        public static string Base64Encode(string plainText)
-        {
-            var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
-            return Convert.ToBase64String(plainTextBytes);
-        }
-        public static string Base64Decode(string base64EncodedData)
-        {
-            var base64EncodedBytes = Convert.FromBase64String(base64EncodedData);
-            return Encoding.UTF8.GetString(base64EncodedBytes);
         }
 
         private void addConnectionButton_Click(object sender, EventArgs e)
