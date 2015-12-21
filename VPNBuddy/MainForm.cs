@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Text;
@@ -13,6 +12,8 @@ namespace VPNBuddy
 {
     public partial class MainForm : Form
     {
+        private SecurityManager _securityManager;
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,6 +21,8 @@ namespace VPNBuddy
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string password = Prompt.ShowDialog("Enter password", "Password");
+            _securityManager = new SecurityManager(password);
             LoadConfig();
         }
 
@@ -94,7 +97,7 @@ namespace VPNBuddy
                 data.Name = vpn.Attribute("name").Value;
                 data.HostName = vpn.Attribute("vpnhost").Value;
                 data.Username = vpn.Attribute("username").Value;
-                data.Password = Base64Decode(vpn.Attribute("password").Value);
+                data.Password = _securityManager.Decrypt(vpn.Attribute("password").Value);
 
                 listBox1.Items.Add(data);
             }
@@ -189,7 +192,7 @@ namespace VPNBuddy
                     new XAttribute("name", vpn.Name),
                     new XAttribute("vpnhost", vpn.HostName),
                     new XAttribute("username", vpn.Username),
-                    new XAttribute("password", Base64Encode(vpn.Password))));
+                    new XAttribute("password", _securityManager.Encrypt(vpn.Password))));
             }
             configDoc.Save("Config.xml", SaveOptions.None);
         }

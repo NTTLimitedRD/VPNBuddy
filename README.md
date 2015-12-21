@@ -13,3 +13,9 @@ You must unblock the powershell file in the download before you can use this
 
 # Screenshot
 ![screenshot](https://raw.githubusercontent.com/DimensionDataCBUSydney/VPNBuddy/master/screenshot.PNG)
+
+Then run createCert.ps1 to generate a signing certificate for your passwords.
+
+![screenshot](https://raw.githubusercontent.com/DimensionDataCBUSydney/VPNBuddy/master/screenshot_key.PNG)
+![screenshot](https://raw.githubusercontent.com/DimensionDataCBUSydney/VPNBuddy/master/screenshot_key2.PNG)
+
