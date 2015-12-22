@@ -9,13 +9,11 @@ namespace VPNBuddy
             InitializeComponent();
         }
 
-        private VpnData _vpnData;
-
         public VpnData VpnData
         {
             get
             {
-                return new VpnData()
+                return new VpnData
                 {
                     HostName = urlTextBox.Text,
                     Password = passwordTextBox.Text,

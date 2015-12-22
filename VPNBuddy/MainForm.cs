@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Management.Automation;
-using System.Text;
+using System.Net;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -53,36 +51,6 @@ namespace VPNBuddy
             }
         }
 
-        private void Write(Collection<PSObject> psOutput)
-        {
-            if (psOutput != null && psOutput.Count > 0)
-            {
-                foreach (var outputItem in psOutput)
-                {
-                    if (outputItem != null)
-                    {
-                        textBox1.AppendText(string.Format("[{0}] {1}{2}", outputItem.BaseObject.GetType().FullName,
-                            outputItem.BaseObject, Environment.NewLine));
-                    }
-                }
-            }
-        }
-
-
-        private void Write(Collection<ErrorRecord> errorOuput)
-        {
-            if (errorOuput != null && errorOuput.Count > 0)
-            {
-                foreach (var errorItem in errorOuput)
-                {
-                    if (errorItem != null)
-                    {
-                        textBox1.AppendText(string.Format("[ERROR] {0}{1}", errorItem, Environment.NewLine));
-                    }
-                }
-            }
-        }
-
         private void Write(Exception ex)
         {
             textBox1.Clear();
@@ -110,25 +78,8 @@ namespace VPNBuddy
         {
             try
             {
-                using (var psInstance = PowerShell.Create())
-                {
-                    psInstance.AddCommand("Set-ExecutionPolicy")
-                        .AddArgument("Unrestricted")
-                        .AddParameter("Scope", "CurrentUser");
-                    var psOutput = psInstance.Invoke();
-                    var errorOuput = psInstance.Streams.Error.ReadAll();
-                    Write(errorOuput);
-                    Write(psOutput);
-
-                    var script = string.Format("./vpnConnect.ps1 -VPNHost \"{0}\" -username \"{1}\" -password \"{2}\"",
-                        data.HostName, data.Username, data.Password);
-                    psInstance.AddScript(script);
-
-                    psOutput = psInstance.Invoke();
-                    errorOuput = psInstance.Streams.Error.ReadAll();
-                    Write(errorOuput);
-                    Write(psOutput);
-                }
+                VpnSessionHost host = new VpnSessionHost(data);
+                host.Connect(new NetworkCredential(data.Username, data.Password), data.HostName);
             }
             catch (Exception ex)
             {

@@ -8,9 +8,6 @@ https://ci.appveyor.com/project/tonybaloney/vpnbuddy/build/artifacts
 # Using
 __IMPORTANT__
 
-You must unblock the powershell file in the download before you can use this 
-![screenshot](https://raw.githubusercontent.com/DimensionDataCBUSydney/VPNBuddy/master/security_cap.PNG)
-
 # Screenshot
 ![screenshot](https://raw.githubusercontent.com/DimensionDataCBUSydney/VPNBuddy/master/screenshot.PNG)
 

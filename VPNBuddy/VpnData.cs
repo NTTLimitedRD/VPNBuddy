@@ -11,5 +11,7 @@
         {
             get { return string.Format("{0} [{1}]", Name, HostName); }
         }
+
+        public static string VpnClientInstallationPath = @"C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\";
     }
 }
