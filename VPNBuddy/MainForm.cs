@@ -79,7 +79,7 @@ namespace VPNBuddy
             try
             {
                 VpnSessionHost host = new VpnSessionHost(data);
-                host.Connect(new NetworkCredential(data.Username, data.Password), data.HostName);
+                Write(host.Connect(new NetworkCredential(data.Username, data.Password), data.HostName));
             }
             catch (Exception ex)
             {
